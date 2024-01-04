@@ -124,7 +124,7 @@ const MultiSelect = () => {
       </div>
       <div className={`options-container ${showOptions}`}>
         {options.map((item) => (
-          <div>
+          <div className="option-item">
             <input
               type="checkbox"
               checked={selectedItems.includes(item.name)}
@@ -139,7 +139,11 @@ const MultiSelect = () => {
                 }
               }}
             />
-            {item.name}
+            <img src={item.image} alt={item.name} />
+            <div className="info">
+              <span className="name">{item.name}</span>
+              <span className="episodes">{item.episode.length} Episodes</span>
+            </div>
           </div>
         ))}
       </div>
